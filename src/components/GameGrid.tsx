@@ -14,7 +14,10 @@ const GameGrid = ({ gameQuery }: Props) => {
 
 	const skeletons = [1, 2, 3, 4, 5, 6];
 
-	if (error) return <Text>{error}</Text>;
+	if (error)
+		return (
+			<Text padding="10px">{`${error}! Check your internet connection and try again.`}</Text>
+		);
 
 	return (
 		<SimpleGrid
