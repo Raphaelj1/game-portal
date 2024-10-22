@@ -31,7 +31,7 @@ function App() {
 			}}
 		>
 			<GridItem area={'nav'}>
-				<NavBar onSearch={(searchText) => setGameQuery({...gameQuery, searchText})}/>
+				<NavBar onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
 			</GridItem>
 			<Show above="lg">
 				<GridItem area={'aside'} paddingX={5}>
@@ -42,16 +42,20 @@ function App() {
 				</GridItem>
 			</Show>
 			<GridItem area={'main'}>
-				<Box paddingLeft={2} >
-					<GameHeading gameQuery={gameQuery}/>
+				<Box paddingLeft={2}>
+					<GameHeading gameQuery={gameQuery} />
 					<Flex gap={5} marginBottom={5}>
-						<PlatformSelector
-							selectedPlatform={gameQuery.platform}
-							onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
-						/>
 						<SortSelector
 							sortOrder={gameQuery.sortOrder}
-							onSelectSortOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
+							onSelectSortOrder={(sortOrder) =>
+								setGameQuery({ ...gameQuery, sortOrder })
+							}
+						/>
+						<PlatformSelector
+							selectedPlatform={gameQuery.platform}
+							onSelectPlatform={(platform) =>
+								setGameQuery({ ...gameQuery, platform })
+							}
 						/>
 					</Flex>
 				</Box>
